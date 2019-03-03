@@ -1,18 +1,20 @@
-        int n1 = 1;
-        int n2 = 2;
-        int n = 0;
-        int sum = 2;
+public class fibo_recursive {
+	
+	 public static int fibonacci(int n) {
+		    if (n == 1 || n == 2) {
+		      return 1;
+		    }
+		 
+		    // fibonacci(n) = fibonacci(n-2) + fibonacci(n-1)
+		    return fibonacci(n-2) + fibonacci(n-1);
+		  }
+	 
+	public static void main(String[] args) {
+		for (int i = 1; i <= 20; i++) {
+		      System.out.print(fibonacci(i) + " ");
+		    }
+		    System.out.println();
 
-        while (n< 4_000_000) {
-            n = n1 + n2;
-            n1 = n2;
-            n2 = n;
+	}
 
-            if (n % 2 == 0) { 
-                sum += n;
-            }
-        }
-   
-        System.out.println("sum: " + sum);
-    }
 }
