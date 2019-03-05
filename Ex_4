@@ -1,1 +1,29 @@
+	public static boolean isPalindrome (int number) {
+		if (number < 9) {
+			return false;
+		}
 
+		int newnumber  = 0;
+		int bkUp = number;
+		while (number!=0) {
+			int last = number % 10;
+			newnumber = newnumber * 10 + last;
+			number/=10;
+		}
+
+		if (newnumber == bkUp) {
+			return true;
+		}
+		return false;
+	}
+
+	public static void main(String[] args) {
+
+		int n = 998001;
+
+		for(int i=n; i<=n; i--) {
+			if (isPalindrome(i)) {
+				System.out.println(i);
+				break;
+			}
+		}
